@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ead PUBLIC "+//ISBN 1-931666-00-8//DTD ead.dtd (Encoded Archival Description (EAD) Version 2002)//EN" "ead.dtd">
+<ead>
+    <eadheader countryencoding="iso3166-1" dateencoding="iso8601" langencoding="iso639-2b"
+        repositoryencoding="iso15511" scriptencoding="iso15924" relatedencoding="dc">
+        <eadid countrycode="iso3166-1" mainagencycode="iso8601" identifier="iso639-2b"
+            encodinganalog="iso15511">FRCGMBPF-595126101-02a.xml</eadid>
+        <filedesc>
+            <titlestmt>
+                <titleproper encodinganalog="title">Bibliothèque municipale de Roubaix. Supplément
+                        au<emph render="italic">Catalogue général des manuscrits des bibliothèques
+                        publiques de France</emph></titleproper>
+            </titlestmt>
+            <publicationstmt>
+                <publisher encodinganalog="publisher">Bibliothèque nationale de France</publisher>
+                <date type="date_de_la_version_électronique" encodinganalog="date"
+                    normal="[date d'achèvement de l'instance sous sa forme normalisée - ex : 2016-01-01]"
+                    >[Date d'achèvement de l'instance sous forme libre]</date>
+            </publicationstmt>
+            <notestmt>
+                <note>
+                    <p><extref>[ici sont encodés les liens avec les autres fichiers]</extref></p>
+                </note>
+            </notestmt>
+        </filedesc>
+        <profiledesc>
+            <creation>[Si les notices descriptives proviennent d'un catalogue ou d'un inventaire
+                antérieur (catalogue imprimé, dactylographié; fichier informatique...), le préciser
+                ici]. Encodage effectué selon la DTD EAD-2002 avec le logiciel [compléter].
+                [Préciser la date d'achèvement de l'encodage].</creation>
+            <langusage>Catalogue rédigé en <language langcode="fre" encodinganalog="language"
+                    >français</language></langusage>
+        </profiledesc>
+    </eadheader>
+    <archdesc level="collection" type="catalogue">
+        <did>
+            <repository><corpname authfilenumber="595126101" source="RCR"
+                    normal="Bibliothèque municipale (Roubaix)">Bibliothèque municipale de
+                    Roubaix</corpname><address>
+                        <addressline>2 rue Pierre Motte</addressline>
+                        <addressline>BP 737</addressline>
+                        <addressline>59066 Roubaix Cedex 1</addressline>
+                        <addressline>Tél. : 03.20.66.45.00</addressline>
+                        <addressline>http://www.mediathequederoubaix.fr</addressline>
+                    </address></repository>
+            <unitid repositorycode="595126101" type="cotes_extrêmes">[Cotes extrêmes des documents
+                décrits si pertinent. Exemple : 3FPM1344-3FPM1596]</unitid>
+            <unittitle>Ex : Inventaire du fonds... </unittitle>
+        </did>
+        <accessrestrict>
+            <p>L'accès aux collections patrimoniales est soumis à une autorisation préalable.</p>
+        </accessrestrict>
+        <userestrict>
+            <p>Toute publication de documents inédits doit être notifiée à l'établissement.</p>
+        </userestrict>
+        <prefercite>
+            <p>[Indiquer la forme sous laquelle doivent être cités les documents. Exemple :
+                Bibliothèque de Roubaix, Ms X, f. Y.</p>
+        </prefercite>
+        <dsc type="combined">[% FOREACH c IN levels %]
+            <c id="seront incrémentés par le CCFr">
+                <did>
+                    <unitid type="cote">[% c.cote %]</unitid>
+                    <unittitle>[% c.unittitle %]</unittitle>
+                    <unitdate era="ce" calendar="gregorian" normal="[% c.date_normal %]">[% c.date %]</unitdate>[% IF c.langmaterial %]
+                    <langmaterial>[% FOREACH lang IN c.langmaterial %]        
+                        <language langcode="[% lang.langcode %]">[% lang.language %]</language>[% END %]
+                    </langmaterial>[% END %][% IF c.technique || c.nb_feuillets || c.dimensions || c.support || c.reliure %]
+                    <physdesc>[% IF c.technique %][% FOREACH tech IN c.technique %]
+                        <genreform type="technique">[% tech %]</genreform>[% END %][% END %][% IF c.nb_feuillets %]
+                        <extent>[% c.nb_feuillets %]</extent>[% END %][% IF c.dimensions %]
+                        <dimensions>[% c.dimensions %]</dimensions>[% END %][% IF c.support %]
+                        <physfacet type="support">[% c.support %]</physfacet>[% END %][% IF c.reliure %]
+                        <physfacet type="reliure">[% c.reliure %]</physfacet>[% END %]
+                    </physdesc>[% END %]
+                </did>[% IF c.scope %]
+                <scopecontent>[% c.scope %]</scopecontent>[% END %][% IF c.provenance %]
+                <note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
+                <controlaccess>[% IF c.persname %][% FOREACH p IN c.persname %]
+                    <persname normal="[% p.persname_normal %]" role="090">[% p.persname %]</persname>[% END %][% END %]
+                </controlaccess>[% END %]
+            </c>[% END %]
+        </dsc>
+    </archdesc>
+</ead>
