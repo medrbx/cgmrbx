@@ -63,21 +63,27 @@
                     <unitid type="cote">[% c.cote %]</unitid>
                     <unittitle>[% c.unittitle %]</unittitle>
                     <unitdate era="ce" calendar="gregorian" normal="[% c.date_normal %]">[% c.date %]</unitdate>[% IF c.langmaterial %]
-                    <langmaterial>[% FOREACH lang IN c.langmaterial %]        
+                    <langmaterial>[% FOREACH lang IN c.langmaterial %]		
                         <language langcode="[% lang.langcode %]">[% lang.language %]</language>[% END %]
-                    </langmaterial>[% END %][% IF c.technique || c.nb_feuillets || c.dimensions || c.support || c.reliure %]
-                    <physdesc>[% IF c.technique %][% FOREACH tech IN c.technique %]
-                        <genreform type="technique">[% tech %]</genreform>[% END %][% END %][% IF c.nb_feuillets %]
-                        <extent>[% c.nb_feuillets %]</extent>[% END %][% IF c.dimensions %]
+                    </langmaterial>[% END %]
+                    <physdesc>[% IF c.extent %]
+                        <extent>[% c.extent %]</extent>[% END %][% IF c.dimensions %]
                         <dimensions>[% c.dimensions %]</dimensions>[% END %][% IF c.support %]
                         <physfacet type="support">[% c.support %]</physfacet>[% END %][% IF c.reliure %]
-                        <physfacet type="reliure">[% c.reliure %]</physfacet>[% END %]
-                    </physdesc>[% END %]
-                </did>[% IF c.scope %]
+                        <physfacet type="reliure">[% c.reliure %]</physfacet>[% END %][% IF c.technique %]
+                        <physfacet type="technique">[% c.technique %]</physfacet>[% END %]
+                    </physdesc>
+                </did>[% IF c.dao %]
+		<dao href="[% c.dao %]">
+			<daodesc>
+				<p>[% c.daodesc %]</p>
+			</daodesc>
+		</dao>[% END %][% IF c.scope %]
                 <scopecontent>[% c.scope %]</scopecontent>[% END %][% IF c.provenance %]
-                <note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
+		<note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
                 <controlaccess>[% IF c.persname %][% FOREACH p IN c.persname %]
-                    <persname normal="[% p.persname_normal %]" role="090">[% p.persname %]</persname>[% END %][% END %]
+                    <persname normal="[% p.persname_normal %]" role="070">[% p.persname %]</persname>[% END %][% END %][% IF c.corpname %][% FOREACH corp IN c.corpname %]
+                    <corpname normal="[% corp.corpname_normal %]" role="070">[% corp.corpname %]</corpname>[% END %][% END %]
                 </controlaccess>[% END %]
             </c>[% END %]
         </dsc>

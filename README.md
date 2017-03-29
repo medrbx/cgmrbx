@@ -21,6 +21,8 @@ On peut indiquer deux techniques différentes, qu'on sépare alors par un caract
 - reliure : non obligatoire, non répétable.
 - note_contenu : non obligatoire, non répétable.
 - provenance : non obligatoire, non répétable.
+- lien vers la bn-r : non obligatoire, non répétable.
+- description du line vers la bn-r : non obligatoire, non répétable.
 - auteur : non obligatoire, répétable.
 On entre l'auteur  d'abord en langage naturel, puis de manière cnormalisée. On sépare les deux par un pipe, sans espace. Par exemple "Charles Barenne|Barenne, Charles".
 - auteur_coll : pas obligatoire, répétable.
