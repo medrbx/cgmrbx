@@ -24,6 +24,6 @@ On peut indiquer deux techniques différentes, qu'on sépare alors par un caract
 - lien vers la bn-r : non obligatoire, non répétable.
 - description du line vers la bn-r : non obligatoire, non répétable.
 - auteur : non obligatoire, répétable.
-On entre l'auteur  d'abord en langage naturel, puis de manière cnormalisée. On sépare les deux par un pipe, sans espace. Par exemple "Charles Barenne|Barenne, Charles".
+On entre l'auteur  d'abord en langage naturel, puis de manière normalisée. On sépare les deux par un pipe, sans espace. Par exemple "Charles Barenne|Barenne, Charles". Pour répéter le champ, on sépare les différents auteurs par un caractère $.
 - auteur_coll : pas obligatoire, répétable.
 Idem que pour auteur.

@@ -63,7 +63,7 @@
                     <unitid type="cote">[% c.cote %]</unitid>
                     <unittitle>[% c.unittitle %]</unittitle>
                     <unitdate era="ce" calendar="gregorian" normal="[% c.date_normal %]">[% c.date %]</unitdate>[% IF c.langmaterial %]
-                    <langmaterial>[% FOREACH lang IN c.langmaterial %]		
+                    <langmaterial>[% FOREACH lang IN c.langmaterial %]        
                         <language langcode="[% lang.langcode %]">[% lang.language %]</language>[% END %]
                     </langmaterial>[% END %]
                     <physdesc>[% IF c.extent %]
@@ -74,13 +74,13 @@
                         <physfacet type="technique">[% c.technique %]</physfacet>[% END %]
                     </physdesc>
                 </did>[% IF c.dao %]
-		<dao href="[% c.dao %]">
-			<daodesc>
-				<p>[% c.daodesc %]</p>
-			</daodesc>
-		</dao>[% END %][% IF c.scope %]
+                <dao href="[% c.dao %]">
+                    <daodesc>
+                        <p>[% c.daodesc %]</p>
+                    </daodesc>
+                </dao>[% END %][% IF c.scope %]
                 <scopecontent>[% c.scope %]</scopecontent>[% END %][% IF c.provenance %]
-		<note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
+                <note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
                 <controlaccess>[% IF c.persname %][% FOREACH p IN c.persname %]
                     <persname normal="[% p.persname_normal %]" role="070">[% p.persname %]</persname>[% END %][% END %][% IF c.corpname %][% FOREACH corp IN c.corpname %]
                     <corpname normal="[% corp.corpname_normal %]" role="070">[% corp.corpname %]</corpname>[% END %][% END %]
