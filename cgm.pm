@@ -54,9 +54,9 @@ sub _langmaterial {
             language => $language,
             langcode => $langcode
         ) ;
-            push @ead_lang, \%ead_lang ;
-        }
-;    return \@ead_lang ;
+        push @ead_lang, \%ead_lang ;
+    }
+    return \@ead_lang ;
 }
 
 sub _corpname {
