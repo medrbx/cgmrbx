@@ -78,8 +78,8 @@
                     <daodesc>
                         <p>[% c.daodesc %]</p>
                     </daodesc>
-                </dao>[% END %][% IF c.scope %]
-                <scopecontent>[% c.scope %]</scopecontent>[% END %][% IF c.provenance %]
+                </dao>[% END %][% IF c.scopecontent %]
+                <scopecontent>[% c.scopecontent %]</scopecontent>[% END %][% IF c.provenance %]
                 <note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
                 <controlaccess>[% IF c.persname %][% FOREACH p IN c.persname %]
                     <persname normal="[% p.persname_normal %]" role="070">[% p.persname %]</persname>[% END %][% END %][% IF c.corpname %][% FOREACH corp IN c.corpname %]

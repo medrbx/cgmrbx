@@ -4,7 +4,10 @@ use strict ;
 use warnings ;
 use Text::CSV ;
 use Template ;
+use Data::Dumper;
+use FindBin qw( $Bin );
 
+use lib "$Bin" ;
 use cgm ;
 
 # On déclare les fichiers d'entrée et de sortie :
@@ -24,6 +27,7 @@ my @levels ;
 
 while ( my $row = $csv->getline_hr($fh) ) {    
     my $level = row2levels($row) ;
+    print Dumper($level);
     push @levels, $level ;
 }
 
