@@ -22,6 +22,11 @@ sub row2levels {
         $row->{'corpname'} = _corpname($row->{'auteur_collectivite'}) ;
     }
     
+    if ( $row->{'technique'} ne '' ) {
+        my @techniques = split /\$/, $row->{'technique'} ;
+        $row->{'technique'} = \@techniques;
+    }
+    
 
     my %c = (
         cote => $row->{'cote'},

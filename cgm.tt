@@ -70,8 +70,8 @@
                         <extent>[% c.extent %]</extent>[% END %][% IF c.dimensions %]
                         <dimensions>[% c.dimensions %]</dimensions>[% END %][% IF c.support %]
                         <physfacet type="support">[% c.support %]</physfacet>[% END %][% IF c.reliure %]
-                        <physfacet type="reliure">[% c.reliure %]</physfacet>[% END %][% IF c.technique %]
-                        <physfacet type="technique">[% c.technique %]</physfacet>[% END %]
+                        <physfacet type="reliure">[% c.reliure %]</physfacet>[% END %][% IF c.technique %][% FOREACH t IN c.technique %]
+                        <physfacet type="technique">[% t %]</physfacet>[% END %][% END %]
                     </physdesc>
                 </did>[% IF c.dao %]
                 <dao href="[% c.dao %]">
