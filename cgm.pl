@@ -11,9 +11,9 @@ use lib "$Bin" ;
 use cgm ;
 
 # On déclare les fichiers d'entrée et de sortie :
-my $input_csv = "cgm_desc_20171214.csv" ;
+my $input_csv = "cgm_desc_20171215.csv" ;
 my $input_tt = "cgm.tt" ;
-my $output_xml = "cgm_20171214.xml" ;
+my $output_xml = "cgm_20171215.xml" ;
 
 # On charge le fichier d'entrée
 open(my $fh, '<:encoding(UTF-8)', $input_csv)

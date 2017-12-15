@@ -26,6 +26,11 @@ sub row2levels {
         my @techniques = split /\$/, $row->{'technique'} ;
         $row->{'technique'} = \@techniques;
     }
+	
+	if ( $row->{'support'} ne '' ) {
+        my @support = split /\$/, $row->{'support'} ;
+        $row->{'support'} = \@support;
+    }
     
 
     my %c = (

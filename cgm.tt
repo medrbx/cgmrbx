@@ -68,8 +68,8 @@
                     </langmaterial>[% END %]
                     <physdesc>[% IF c.extent %]
                         <extent>[% c.extent %]</extent>[% END %][% IF c.dimensions %]
-                        <dimensions>[% c.dimensions %]</dimensions>[% END %][% IF c.support %]
-                        <physfacet type="support">[% c.support %]</physfacet>[% END %][% IF c.reliure %]
+                        <dimensions>[% c.dimensions %]</dimensions>[% END %][% IF c.support %][% FOREACH s IN c.support %]
+                        <physfacet type="support">[% s %]</physfacet>[% END %][% END %][% IF c.reliure %]
                         <physfacet type="reliure">[% c.reliure %]</physfacet>[% END %][% IF c.technique %][% FOREACH t IN c.technique %]
                         <physfacet type="technique">[% t %]</physfacet>[% END %][% END %]
                     </physdesc>
