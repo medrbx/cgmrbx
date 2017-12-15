@@ -58,7 +58,7 @@
                 Bibliothèque de Roubaix, Ms X, f. Y.</p>
         </prefercite>
         <dsc type="combined">[% FOREACH c IN levels %]
-            <c id="seront incrémentés par le CCFr">
+            <c level="otherlevel" otherlevel="notice" id="">
                 <did>
                     <unitid type="cote">[% c.cote %]</unitid>
                     <unittitle>[% c.unittitle %]</unittitle>
