@@ -13,7 +13,7 @@ use cgm ;
 # On déclare les fichiers d'entrée et de sortie :
 my $input_csv = "cgm_desc_20171215.csv" ;
 my $input_tt = "cgm.tt" ;
-my $output_xml = "cgm_20171215.xml" ;
+my $output_xml = "roubaix_cgm_20171231.xml" ;
 
 # On charge le fichier d'entrée
 open(my $fh, '<:encoding(UTF-8)', $input_csv)
@@ -24,8 +24,10 @@ my $csv = Text::CSV->new ({ binary => 1, auto_diag => 1 });
 $csv->column_names( @column_names );
 
 my @levels ;
-
+my $id = 10002;
 while ( my $row = $csv->getline_hr($fh) ) {    
+    $row->{id} = "ROU0" . $id;
+    $id++;    
     my $level = row2levels($row) ;
     print Dumper($level);
     push @levels, $level ;

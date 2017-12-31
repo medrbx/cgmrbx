@@ -35,6 +35,7 @@ sub row2levels {
 
     my %c = (
         cote => $row->{'cote'},
+        id => $row->{'id'},
         unittitle => $row->{'unittitle'},
         date => $row->{'date'},
         date_normal => $row->{'date_normal'},

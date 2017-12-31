@@ -58,7 +58,7 @@
                 Bibliothèque de Roubaix, Ms X, f. Y.</p>
         </prefercite>
         <dsc type="combined">[% FOREACH c IN levels %]
-            <c level="otherlevel" otherlevel="notice" id="">
+            <c level="otherlevel" otherlevel="notice" id="[% c.id %]">
                 <did>
                     <unitid type="cote">[% c.cote %]</unitid>
                     <unittitle>[% c.unittitle %]</unittitle>
@@ -79,8 +79,10 @@
                         <p>[% c.daodesc %]</p>
                     </daodesc>
                 </dao>[% END %][% IF c.scopecontent %]
-                <scopecontent>[% c.scopecontent %]</scopecontent>[% END %][% IF c.provenance %]
-                <note type="provenance"><p>[% c.provenance %]</p></note>[% END %][% IF c.persname || c.corpname %]
+                <scopecontent>
+					<p>[% c.scopecontent %]</p>
+				</scopecontent>[% END %][% IF c.provenance %]
+                <acquinfo><p>[% c.provenance %]</p></acquinfo>[% END %][% IF c.persname || c.corpname %]
                 <controlaccess>[% IF c.persname %][% FOREACH p IN c.persname %]
                     <persname normal="[% p.persname_normal %]" role="070">[% p.persname %]</persname>[% END %][% END %][% IF c.corpname %][% FOREACH corp IN c.corpname %]
                     <corpname normal="[% corp.corpname_normal %]" role="070">[% corp.corpname %]</corpname>[% END %][% END %]
